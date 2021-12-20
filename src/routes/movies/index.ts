@@ -7,7 +7,7 @@ moviesRouter.get("/", async (request, response) => {
   let moviesResponse;
   try {
     moviesResponse = await axios.get(
-      "https://api.themoviedb.org/3/search/movie?query=spiderman&api_key=<api_key>"
+      `https://api.themoviedb.org/3/search/movie?query=${request.query.query}&api_key=<api_key>`
     );
   } catch (error) {
     console.log(error);
